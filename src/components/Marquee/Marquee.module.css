@@ -1,0 +1,38 @@
+.marqueeContainer{
+    overflow: hidden;
+   padding-block: 3rem;
+}
+
+.marquee {
+    width: 102%;
+    padding: .5rem;
+    z-index: 1;
+    background-color: #000;
+    transform: rotate(-2deg) translateX(-1%);
+}
+
+
+.marquee div {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    width: 200dvw;
+    flex-wrap: nowrap;
+    color: #fff;
+    font-size: clamp(1.2rem, 2.5vw, 2.5rem);
+    font-variant: small-caps;
+    width: 200%;
+    will-change: transform;
+}
+
+.marquee div span{
+    text-wrap: nowrap;
+}
+
+.separador {
+  font-size: 0.75em;
+  opacity: 0.5;
+  transform: translateY(-1px); /* quebra rigidez */
+}
