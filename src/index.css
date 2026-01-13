@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Shojumaru&display=swap');
+
+@font-face {
+  font-family: "displayFont";
+  src: url("/src/assets/fonts/blowbrush/blowbrush.otf") format("truetype");
+    font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+    /* Identidade */
+    --color-primary: #FD3889;
+    --color-secondary: #eeff00;
+    /* --color-secondary: #7c1bb4; */
+    --color-accent: #8b124b;
+
+    /* Fundos */
+    --color-bg: #F5F5F5;
+    --color-surface: #FFFFFF;
+    --color-overlay: rgba(0, 0, 0, 0.6);
+
+    /* Texto */
+    --color-text: #000000;
+    --color-muted: #9ca3af;
+
+    /* Estados */
+    --color-success: #22c55e;
+    --color-warning: #f59e0b;
+    --color-error: #ef4444;
+
+    /* Fonts */
+    --font-default: 'Montserrat',Impact,sans-serif;
+    --font-display: 'displayFont',Impact,sans-serif;
+    --font-title: 'Shojumaru',Impact,sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-default);
+    box-sizing: border-box;
+}
+
+body{
+  background-color: var(--color-bg);
+}

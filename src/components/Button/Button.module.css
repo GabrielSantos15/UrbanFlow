@@ -1,0 +1,46 @@
+
+.button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    width: fit-content;
+    padding: 4px 8px;
+    padding-right: calc(3rem + 1rem);
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 120%;
+    color: var(--color-primary);
+
+    border: 2px solid var(--color-primary);
+    background-color: var(--color-bg);
+
+    line-height: 2rem;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.button .iconButton {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 4px);
+    width: 3rem;
+    border-radius: 20px;
+    right: 2px;
+    transition: all 0.3s;
+}
+
+.button:hover .iconButton {
+    width: calc(100% - 4px);
+}
+
+.button:active .iconButton {
+    transform: scale(0.95);
+}
