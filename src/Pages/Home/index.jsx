@@ -1,16 +1,15 @@
 import Hero from "../../components/home/Hero"
-import Hero2 from "../../components/Home/Hero"
+import Stats from "../../components/home/Stats"
 import Marquee from "../../components/Marquee"
 
 export default function Home(){
     return(
         <main>
-            <Hero2></Hero2>
+            <Hero></Hero>
             <Marquee></Marquee>
+            <Stats></Stats>
             <section style={{height:'100vh'}}>
-
             </section>
-            <Hero/>
         </main>
     )
 }
