@@ -7,8 +7,8 @@ export default function Home(){
     return(
         <main>
             <Hero></Hero>
-            <Stats></Stats>
             <Marquee></Marquee>
+            <Stats></Stats>
             <Collections></Collections>
         </main>
     )
