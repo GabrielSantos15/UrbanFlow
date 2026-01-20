@@ -1,0 +1,21 @@
+.testimonialsSection {
+    margin-top: 5em;
+    background-color: var(--color-surface-secondary);
+}
+
+.sectionHeader{
+    padding: 2em;
+}
+
+.sectionHeader h2 {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 120%;
+    font-family: var(--font-display);
+    
+}
+
+.sectionHeader p {
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 2rem);
+}

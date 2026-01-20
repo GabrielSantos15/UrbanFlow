@@ -1,0 +1,70 @@
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.track {
+  display: flex;
+  justify-content: start;
+  gap: 1em;
+  padding: 2em;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  
+  scroll-padding-left: 2em;
+
+  scrollbar-width: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.track>* {
+  scroll-snap-align: start;
+}
+
+.control {
+  all: unset;
+  position: absolute;
+  
+  display: grid;
+  place-content: center;
+
+  
+  background-color: #000000;
+  color: #fff;
+  box-shadow:  2px 2px 5px #0000005d;
+  backdrop-filter: blur(5px);
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  
+  aspect-ratio: 1/1;
+  border-radius: 20%;
+  padding: .5rem;
+  opacity: 0;
+  user-select: none;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.carousel:hover .control{
+  opacity: 1;
+}
+
+.control:hover {
+  background-color:var(--color-primary);
+  color: #fff;
+}
+.controlLeft {
+  left: 1em;
+}
+
+.controlRight {
+  right: 1em;
+}
