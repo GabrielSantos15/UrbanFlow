@@ -16,7 +16,7 @@ export default function Hero() {
           A Urban Flow nasce do grafite, do traço livre e da cidade viva. Feito
           pra quem vê arte fora das paredes e entende estilo como linguagem.
         </p>
-       <Button text={"Entrar no flow"}></Button>
+       <Button to={"/products"} text={"Entrar no flow"}></Button>
       </article>
       <article className={styles.heroStats}>
         <span>

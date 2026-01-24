@@ -1,0 +1,58 @@
+.productCard{
+    display: grid;
+    gap: .5rem;
+    max-width: 500px;
+}
+
+.productCard figure{
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    background-image: radial-gradient(#f4f4f4,#e9e9e9);
+    background-color: #eee;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.productCard:hover figure img{
+    transform: rotate(2deg) scale(1.1);
+}
+.productCard figure img{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all .5s;
+}
+
+.productCard h3{
+    font-size: 1.5rem;
+    line-height: 120%;
+    text-transform: capitalize;
+}
+.description {
+    overflow: hidden;
+    
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    
+    display: none;
+}
+
+.priceContainer{
+    height: 100%;
+    display: flex;
+    align-items: end;
+    gap: .5rem;
+}
+
+
+.price{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.oldPrice{
+    text-decoration: line-through;
+    color: var(--color-muted);
+}

@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    text-decoration: none;
 
     width: fit-content;
     padding: .5rem 1rem;

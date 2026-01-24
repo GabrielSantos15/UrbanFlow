@@ -44,3 +44,7 @@
 body{
   background-color: var(--color-bg);
 }
+
+main{
+  min-height: 100dvh;
+}

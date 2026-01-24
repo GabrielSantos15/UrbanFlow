@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import Counter from "../../components/Counter";
 import styles from "./Stats.module.css";
 import image from "../../assets/images/logo.png";

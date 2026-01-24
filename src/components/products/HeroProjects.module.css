@@ -1,0 +1,21 @@
+.heroProjects {
+  background-image: url('assets/images/predios.jpg');
+  background-position: center center;
+  background-size: cover;
+  object-fit: cover;
+  background-attachment: fixed;
+  background-color: #eeee;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  overflow: hidden;
+}
+
+.heroProjects h1 {
+  background-image: linear-gradient(transparent, #000000b0 60%);
+  width: 100%;
+  color: var(--color-bg);
+  text-align: center;
+  font-size: 20rem;
+  transform: translateY(25%);
+}
