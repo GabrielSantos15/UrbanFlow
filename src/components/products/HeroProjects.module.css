@@ -16,6 +16,6 @@
   width: 100%;
   color: var(--color-bg);
   text-align: center;
-  font-size: 20rem;
+  font-size: clamp(5rem, 25vw, 20rem);
   transform: translateY(25%);
 }

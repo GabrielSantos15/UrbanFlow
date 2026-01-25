@@ -1,0 +1,114 @@
+.filtersContainer {
+    position: relative;
+    padding: 1em;
+}
+
+.filtersContainer input[type="range"] {
+    accent-color: var(--color-primary);
+}
+
+.filtersContainer form {
+    position: sticky;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    top: 1em;
+}
+
+.filtersContainer fieldset {
+    border: 2px solid var(--color-surface-secondary);
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
+.filtersContainer fieldset legend {
+    padding-left: 1rem;
+}
+
+.clearBtn{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: fit-content;
+    margin: auto;
+    border: 2px solid var(--color-surface-secondary);
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.clearBtn svg{
+    font-size: 1.2rem;
+}
+
+.clearBtn:hover{
+    background-color: var(--color-surface-secondary);
+}
+
+.filtersContainer select {
+    width: 100%;
+    border: 2px solid var(--color-surface-secondary);
+    border-radius: 5px;
+    background-color: initial;
+    padding: 0.5rem;
+}
+
+.filterCategory {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.filterCategory input {
+    display: none;
+}
+
+.filterCategory label {
+    transition: .5s;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    border: 1px solid var(--color-surface-secondary);
+}
+
+.filterCategory label:has(input:checked) {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.filterCategory:has(input:checked) label:not(:has(input:checked)) {
+    background-color: var(--color-surface-secondary);
+}
+
+.filterPrice {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5rem;
+}
+
+.filterPrice div {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputPrice {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    border: 1px solid var(--color-surface-secondary);
+    border-radius: 5px;
+}
+
+.inputPrice i {
+    display: grid;
+    place-content: center;
+    background-color: var(--color-surface-secondary);
+    height: 100%;
+}
+
+.inputPrice input {
+    all: unset;
+    padding: 0.5rem;
+}
+
+.inputPrice input::before {
+    content: "R$";
+}

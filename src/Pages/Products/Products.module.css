@@ -1,0 +1,52 @@
+.searchHeader {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 2rem;
+}
+
+.searchHeader h3{
+    font-weight: 600;
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
+}
+
+.ProductsSection {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.searchContainer {
+    border: 2px solid var(--color-muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    border-radius: 1.5em;
+    padding: 5px;
+}
+.searchContainer svg{
+    font-size: 1.5rem;
+    color: var(--color-muted);
+}
+.searchContainer input {
+    all: unset;
+    padding: .3rem .5rem;
+    font-size: 1em;
+}
+
+.searchContainer button {
+    all: unset;
+    background-color: #000;
+    padding: 8px 16px;
+    border-radius: calc(1.5em - 5px);
+    color: #fff;
+    height: 100%;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+    .ProductsSection {
+        grid-template-columns: 350px 1fr;
+    }
+}
