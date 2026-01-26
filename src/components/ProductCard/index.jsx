@@ -1,6 +1,10 @@
 import styles from "./ProductCard.module.css";
+import { useCart } from "../../context/CartContext"
 
 export default function ProductCard({ product }) {
+
+   const { addToCart } = useCart()
+
   function priceFormatad(price) {
     return new Intl.NumberFormat("pt-BR", {
       style: "currency",
@@ -24,6 +28,9 @@ export default function ProductCard({ product }) {
           <p className={styles.oldPrice}>{priceFormatad(product.oldPrice)}</p>
         )}
       </div>
+          <button onClick={() => addToCart(product)}>
+        Adicionar ao carrinho
+      </button>
     </article>
   );
 }

@@ -1,11 +1,26 @@
 import { useEffect, useState } from "react";
-import { FaMoon, FaCircle, FaCode } from "react-icons/fa6";
+import { FaCartShopping } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
-import Logo from "../../assets/images/simpleLogo.png"
-import "./Header.estilos.css";
+import { useCart } from "../../context/CartContext";
+import { useCartUI } from "../../context/CartUIContext";
+import Logo from "../../assets/images/simpleLogo.png";
+import styles from "./Header.module.css";
+
+function CartButton() {
+  const { cart } = useCart();
+  const { toggleCart } = useCartUI();
+
+  const count = cart?.reduce((sum, item) => sum + item.quantity, 0) ?? 0;
+
+  return (
+         <div className={styles.btnCart} onClick={toggleCart}>
+            <FaCartShopping className={styles.iconButton}></FaCartShopping>
+           <p>{count} Produtos</p>
+         </div>
+  );
+}
 
 export default function Header() {
-
   const [menuOpen, setMenuOpen] = useState(false);
 
   const [visible, setVisible] = useState(true);
@@ -32,13 +47,13 @@ export default function Header() {
 
   return (
     <header
-      className={`site-header ${visible ? "show" : "hide"} ${
-        menuOpen ? "open" : ""
+      className={`${styles.siteHeader} ${visible ? styles.show : styles.hide} ${
+        menuOpen ? styles.open : ""
       }`}
     >
-      <div className={menuOpen ? "overlay" : ""} onClick={closeMenu}>
-        <div className="menu" onClick={(e) => e.stopPropagation()}>
-          <nav className="nav">
+      <div className={styles.overlay} onClick={closeMenu}>
+        <div className={styles.menu} onClick={(e) => e.stopPropagation()}>
+          <nav className={styles.nav}>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/about">Sobre</NavLink>
             <NavLink to="/products">Produtos</NavLink>
@@ -46,13 +61,13 @@ export default function Header() {
         </div>
       </div>
 
-      <figure className="logo">
+      <figure className={styles.logo}>
         <img src={Logo} width={50} alt="Logo UrbanFlow" />
       </figure>
-      
-      <div className="header-actions">
+      <CartButton></CartButton>
+      <div className={styles.headerActions}>
         <button
-          className="menu-toggle"
+          className={styles.menuToggle}
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label="Menu"
         >

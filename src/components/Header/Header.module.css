@@ -1,4 +1,4 @@
-.site-header {
+.siteHeader {
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -12,6 +12,7 @@
   
   background-color: var(--color-surface);
   box-shadow: 0px 0 10px #0000003d;
+  transition: all 0.3s ease;
 }
 
 .logo {
@@ -20,16 +21,11 @@
   margin: auto;
 }
 
-.site-header {
-  transition: all 0.3s ease;
-}
-
-
-.site-header.hide {
+.siteHeader.hide {
   transform: translateY(-100%);
 }
 
-.site-header.show {
+.siteHeader.show {
   transform: translateY(0);
 }
 
@@ -50,13 +46,19 @@
   box-shadow: -5px 0 15px #0000003d;
 }
 
-.site-header.open .menu {
-  width:  70%;
-  color: #2d2d2d;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
 
-.dark .site-header.open .menu {
-  color: inherit;
+.siteHeader.open .menu {
+  width:  70%;
+  color: #2d2d2d;
 }
 
 .nav {
@@ -96,43 +98,80 @@
 }
 
 
-.header-actions {
+.headerActions {
   display: flex;
   align-items: center;
   gap: 1rem;
   z-index: 1001;
 }
 
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  color: var(--corTexto);
-}
-
-.menu-toggle {
+.menuToggle {
   font-size: 1.8rem;
 }
 
-.mobile-theme-btn {
+.mobileThemeBtn {
   font-size: 1.2rem;
   margin-top: 1rem;
 }
 
-
-
-.desktop-theme-btn {
+.desktopThemeBtn {
   display: none;
 }
 
-.theme-toggle:hover,.menu-toggle:hover{
+.themeToggle:hover,.menuToggle:hover{
   color: var(--corTema);
+}
+
+
+
+.btnCart {
+    all: unset;
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+
+    width: fit-content;
+    padding: .5rem;
+    padding-left: 3.5rem;
+
+    text-decoration: none;
+    color: var(--color-text-btn);
+
+    border: 2px solid var(--color-primary);
+
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.btnCart .iconButton {
+    background-color: var(--color-primary);
+    color: #fff;
+
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 4px);
+    width: 3rem;
+    padding: .5em;
+    border-radius: 20px;
+    left: 2px;
+    transition: all 0.3s;
+}
+
+.btnCart:hover .iconButton {
+    width: calc(100% - 4px);
+}
+
+.btnCart:active .iconButton {
+    transform: scale(0.95);
 }
 
 /* --- DESKTOP --- */
 @media (min-width: 768px) {
 
-  .menu-toggle {
+  .menuToggle {
     display: none;
   }
 
@@ -156,20 +195,20 @@ button {
     border: none;
   }
 
-  .mobile-theme-btn {
+  .mobileThemeBtn {
     display: none;
   }
 
-  .desktop-theme-btn {
+  .desktopThemeBtn {
     display: block;
     font-size: 1.5rem;
   }
 
-  .site-header .overlay {
+  .siteHeader .overlay {
     all: unset;
   }
 
-  .site-header.open .menu {
+  .siteHeader.open .menu {
     color: inherit;
   }
 

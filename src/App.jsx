@@ -5,11 +5,15 @@ import About from "./Pages/About";
 import Products from "./Pages/Products";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
+import { useState } from "react";
+import CartSidebar from "./components/CartSidebar";
 
 function App() {
+
   return (
     <>
       <Header></Header>
+      <CartSidebar></CartSidebar>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
