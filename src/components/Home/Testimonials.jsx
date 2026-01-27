@@ -10,7 +10,7 @@ export default function Testimonials() {
         <h2>Depoimentos </h2>
         <p>Quem vive o flow fala por nós.</p>
       </div>
-      <Carousel className={styles.testemonialsContainer}>
+      <Carousel>
         {testimonials.map((testimonial, index) => (
           <TestimonyCard key={index} {...testimonial} />
         ))}

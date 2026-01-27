@@ -1,9 +1,9 @@
 import styles from "./ProductCard.module.css";
-import { useCart } from "../../context/CartContext"
+import { Link } from "react-router-dom";
 
 export default function ProductCard({ product }) {
 
-   const { addToCart } = useCart()
+
 
   function priceFormatad(price) {
     return new Intl.NumberFormat("pt-BR", {
@@ -13,7 +13,7 @@ export default function ProductCard({ product }) {
   }
 
   return (
-    <article className={styles.productCard}>
+    <Link to={`/product/${product.id}`} className={styles.productCard}>
       <figure>
         <img src={product.image} alt={product.name} />
       </figure>
@@ -28,9 +28,7 @@ export default function ProductCard({ product }) {
           <p className={styles.oldPrice}>{priceFormatad(product.oldPrice)}</p>
         )}
       </div>
-          <button onClick={() => addToCart(product)}>
-        Adicionar ao carrinho
-      </button>
-    </article>
+          
+    </Link>
   );
 }

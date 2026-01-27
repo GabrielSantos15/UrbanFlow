@@ -26,11 +26,14 @@
 
 .track>* {
   scroll-snap-align: start;
+  flex: 0 0 auto;
+
 }
 
 .control {
   all: unset;
   position: absolute;
+  z-index: 700;
   
   display: grid;
   place-content: center;

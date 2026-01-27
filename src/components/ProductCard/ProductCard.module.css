@@ -1,8 +1,12 @@
 .productCard{
     display: grid;
     gap: .5rem;
+
     max-width: 500px;
+    width: 100%;
     margin: auto;
+    text-decoration: none;
+    color: initial;
 }
 
 .productCard figure{
@@ -15,8 +19,9 @@
 }
 
 .productCard:hover figure img{
-    transform: rotate(2deg) scale(1.1);
+    filter: brightness(.7);
 }
+
 .productCard figure img{
     overflow: hidden;
     width: 100%;
@@ -29,6 +34,7 @@
     font-size: 1.5rem;
     line-height: 120%;
     text-transform: capitalize;
+    font-weight: 600;
 }
 .description {
     overflow: hidden;
@@ -56,4 +62,11 @@
 .oldPrice{
     text-decoration: line-through;
     color: var(--color-muted);
+}
+
+.teste{
+    background-color: red;
+    width: 300px;
+    height: 200px;
+    display: block;
 }

@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import { useState } from "react";
 import CartSidebar from "./components/CartSidebar";
+import ProductDetail from "./Pages/ProductDetail";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
       </Routes>
       <Footer></Footer>
     </>
