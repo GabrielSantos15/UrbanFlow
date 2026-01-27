@@ -1,52 +1,80 @@
-import { useCart } from "../../context/CartContext"
-import { useCartUI } from "../../context/CartUIContext"
+import { useCart } from "../../context/CartContext";
+import { useCartUI } from "../../context/CartUIContext";
+import styles from "./CartSidebar.module.css";
 
-const CartSidebar = () => {
-  const { cart, increase, decrease, removeFromCart, total } = useCart()
-  const { isOpen, closeCart } = useCartUI()
-
-  if (!isOpen) return null
+export default function CartSidebar() {
+  const { cart, increase, decrease, removeFromCart, total } = useCart();
+  const { isOpen, closeCart } = useCartUI();
+  const count = cart?.reduce((sum, item) => sum + item.quantity, 0) ?? 0;
 
   return (
-    <div className="overlay" onClick={closeCart}>
+    <div
+      className={`${styles.overlay} ${isOpen ? styles.overlayVisible : ""}`}
+      onClick={closeCart}
+    >
       <aside
-        className="cart-sidebar"
-        onClick={e => e.stopPropagation()}
+        className={`${styles.cartSidebar} ${isOpen ? styles.cartSidebarVisible : ""}`}
+        onClick={(e) => e.stopPropagation()}
       >
         <header>
+          <p className={styles.countNumber}>{count}</p>
           <h2>Carrinho</h2>
-          <button onClick={closeCart}>✕</button>
+          <button className={styles.closeCart} onClick={closeCart}>✕</button>
         </header>
-
         {cart.length === 0 ? (
           <p>Carrinho vazio</p>
         ) : (
           <>
-            {cart.map(item => (
-              <div key={item.id} className="cart-item">
-                <span>{item.name}</span>
+            <div className={styles.listCart}>
+              {cart.map((item) => (
+                <div key={item.id} className={styles.cartItem}>
+                  <figure>
+                    <img src={item.image} alt="" />
+                  </figure>
+                  <div className={styles.infoItem}>
+                    <span className={styles.nameItem}>{item.name}</span>
+                    <span>R$ {item.price.toFixed(2)}</span>
 
-                <div>
-                  <button onClick={() => decrease(item.id)}>-</button>
-                  <span>{item.quantity}</span>
-                  <button onClick={() => increase(item.id)}>+</button>
+                    <div className={styles.quantityItem}>
+                      <button
+                        onClick={
+                          item.quantity > 1
+                            ? () => decrease(item.id)
+                            : undefined
+                        }
+                        className={
+                          item.quantity > 1
+                            ? styles.quantityBtn
+                            : styles.quantityDisabled
+                        }
+                        disabled={item.quantity <= 1}
+                      >
+                        -
+                      </button>
+                      <span>{item.quantity}</span>
+                      <button className={styles.quantityBtn} onClick={() => increase(item.id)}>+</button>
+                    </div>
+                  </div>
+                  <button
+                    className={styles.removeItem}
+                    onClick={() => removeFromCart(item.id)}
+                  >
+                    ✕
+                  </button>
                 </div>
-
-                <button onClick={() => removeFromCart(item.id)}>
-                  Remover
-                </button>
-              </div>
-            ))}
+              ))}
+            </div>
 
             <footer>
-              <strong>Total: R$ {total.toFixed(2)}</strong>
-              <button>Finalizar compra</button>
+              <span>
+                <p>Subtotal:</p>
+                <p className={styles.priceItem}>R$ {total.toFixed(2)}</p>
+              </span>
+              <button className={styles.checkoutBnt}>Revisar compra</button>
             </footer>
           </>
         )}
       </aside>
     </div>
-  )
+  );
 }
-
-export default CartSidebar

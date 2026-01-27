@@ -1,11 +1,13 @@
 .siteHeader {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 900;
   
   display: grid;
   align-items: center;
   grid-template-columns: 1fr .5fr 1fr;
+
+  justify-items: center;
   
   width: 100%;
   padding: 0 10px;
