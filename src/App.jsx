@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import { useState } from "react";
 import CartSidebar from "./components/CartSidebar";
 import ProductDetail from "./Pages/ProductDetail";
+import Checkout from "./Pages/Checkout";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
       <Footer></Footer>
     </>

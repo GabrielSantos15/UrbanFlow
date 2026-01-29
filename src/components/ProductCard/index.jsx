@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 
 export default function ProductCard({ product }) {
 
-
-
   function priceFormatad(price) {
     return new Intl.NumberFormat("pt-BR", {
       style: "currency",

@@ -31,7 +31,7 @@
 .heroSection h1 {
     font-size: clamp(4rem, 12vw, 12rem);
     font-family: var(--font-display);
-      /* -webkit-text-stroke-width: 1px; 
+    /* -webkit-text-stroke-width: 1px; 
   -webkit-text-stroke-color: var(--color-primary);  */
 
     text-align: center;
@@ -65,7 +65,7 @@
 
 }
 
-.heroContent{
+.heroContent {
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -81,10 +81,7 @@
 }
 
 .heroStats {
-    max-width: 500px;
-    display: flex;
-    justify-content: space-around;
-    gap: 1em;
+    display: none;
 }
 
 .heroStats span {
@@ -128,6 +125,10 @@
 
     .heroStats {
         grid-area: heroStats;
+        max-width: 500px;
+        display: flex;
+        justify-content: space-around;
+        gap: 1em;
     }
 
     .heroTitles {

@@ -1,0 +1,212 @@
+/* ==================================== Carrinho Vazio =================================== */
+.emptyCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    color: var(--color-muted);
+}
+
+.emptyCart img {
+    width: min(500px, 75vw);
+    filter: saturate(.7) contrast(.7);
+}
+
+.emptyCart h2 {
+    font-size: clamp(2rem, 7vw, 3rem);
+}
+
+/* ==================================== Carrinho Vazio =================================== */
+.checkout {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1500px;
+    margin: auto;
+    align-items: start;
+}
+
+.checkoutList,
+.checkoutContainer {
+    width: 100%;
+    background-color: var(--color-surface);
+    border-radius: 5px;
+}
+
+.checkoutList header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+}
+
+.checkoutList header h2 {
+    font-size: clamp(2rem, 7vw, 2.5rem);
+}
+
+.clearBtn {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    opacity: .5;
+    transition: .5s;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.clearBtn:hover {
+    opacity: 1;
+}
+
+.checkoutContainer {
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    box-shadow: 0px -5px 10px #00000030;
+    padding: 1rem;
+}
+
+.cartItem {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.cartItem:not(:last-child) {
+    border-bottom: 1px solid var(--color-surface-secondary);
+}
+
+.cartItem img {
+    border-radius: 5px;
+    width: min(100px, 25vw);
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.productItem {
+    display: flex;
+    flex-direction: column;
+    justify-self: start;
+    grid-column: span 2;
+}
+
+.nameItem {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+.priceItem {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.quantityItem {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.quantityBtn,
+.quantityDisabled {
+    display: grid;
+    place-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid #000;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.quantityDisabled {
+    border: 1px solid var(--color-muted);
+    color: var(--color-muted);
+}
+
+.removeItem {
+    margin: auto;
+    cursor: pointer;
+}
+
+.primaryBtn,
+.secondaryBtn {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.5rem 0.1rem;
+        text-decoration: none;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.primaryBtn {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.primaryBtn:hover {
+    filter: brightness(.7);
+}
+
+.secondaryBtn {
+    display: block;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.secondaryBtn:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.checkout .secondaryBtn {
+    display: none;
+}
+
+/* ==================================== Media Tablet =================================== */
+
+@media screen and (min-width: 600px) {
+    .cartItem {
+        grid-template-columns: repeat(6, 1fr);
+        justify-items: start;
+    }
+
+    .checkoutList {
+        box-shadow: 5px 5px 5px #00000020;
+        padding: 1rem;
+    }
+}
+
+/* ==================================== Media Desktop =================================== */
+
+@media screen and (min-width: 1024px) {
+    .checkout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2em;
+        padding: 2em;
+    }
+
+    .checkoutContainer {
+        position: sticky;
+        top: 5em;
+    }
+
+    .checkoutList,
+    .checkoutContainer {
+        box-shadow: 5px 5px 5px #00000020;
+        padding: 1rem;
+    }
+
+    .checkout .secondaryBtn {
+        display: ruby-base;
+    }
+}

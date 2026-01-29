@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { useCartUI } from "../../context/CartUIContext";
 import styles from "./CartSidebar.module.css";
@@ -19,7 +20,9 @@ export default function CartSidebar() {
         <header>
           <p className={styles.countNumber}>{count}</p>
           <h2>Carrinho</h2>
-          <button className={styles.closeCart} onClick={closeCart}>✕</button>
+          <button className={styles.closeCart} onClick={closeCart}>
+            ✕
+          </button>
         </header>
         {cart.length === 0 ? (
           <p>Carrinho vazio</p>
@@ -52,7 +55,12 @@ export default function CartSidebar() {
                         -
                       </button>
                       <span>{item.quantity}</span>
-                      <button className={styles.quantityBtn} onClick={() => increase(item.id)}>+</button>
+                      <button
+                        className={styles.quantityBtn}
+                        onClick={() => increase(item.id)}
+                      >
+                        +
+                      </button>
                     </div>
                   </div>
                   <button
@@ -70,7 +78,9 @@ export default function CartSidebar() {
                 <p>Subtotal:</p>
                 <p className={styles.priceItem}>R$ {total.toFixed(2)}</p>
               </span>
-              <button className={styles.checkoutBnt}>Revisar compra</button>
+              <NavLink to="/checkout">
+                <button className={styles.checkoutBnt}>Revisar compra</button>
+              </NavLink>
             </footer>
           </>
         )}
