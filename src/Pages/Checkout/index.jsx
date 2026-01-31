@@ -2,13 +2,17 @@ import { NavLink } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import styles from "./Checkout.module.css";
 import { FaTrash } from "react-icons/fa6";
-import logo from "../../assets/images/logo.png"
+import logo from "../../assets/images/logo.png";
+import PaymentForm from "../../components/PaymentForm";
+import { useState } from "react";
+import Swal from "sweetalert2";
 
 export default function Checkout() {
   const { cart, increase, decrease, removeFromCart, clearCart, total } =
     useCart();
   const count = cart?.reduce((sum, item) => sum + item.quantity, 0) ?? 0;
-  
+  const [showPaymentForm, setShowPaymentForm] = useState(false);
+
   if (count <= 0) {
     return (
       <main className={styles.emptyCart}>
@@ -30,7 +34,30 @@ export default function Checkout() {
             <h2>Carrinho</h2>
             <p>Revise seus itens antes do checkout</p>
           </div>
-          <button className={styles.clearBtn} onClick={() => clearCart()}>
+          <button
+            className={styles.clearBtn}
+            onClick={() => {
+              Swal.fire({
+                title: "Limpar Carrinho?",
+                text: "Você tem certeza? Todos os seus itens serão removidos.",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "var(--color-primary)", 
+                confirmButtonText: "Sim, limpar!",
+                cancelButtonText: "Cancelar",
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  clearCart();
+                  Swal.fire({
+                    title: "Carrinho Vazio",
+                    icon: "success",
+                    showConfirmButton: false,
+                    timer: 1500,
+                  });
+                }
+              });
+            }}
+          >
             <FaTrash /> Limpar
           </button>
         </header>
@@ -76,6 +103,10 @@ export default function Checkout() {
             </button>
           </div>
         ))}
+        <div className={styles.priceContainer}>
+          <p>Total:</p>
+          <p className={styles.priceItem}>R$ {total.toFixed(2)}</p>
+        </div>
       </section>
 
       <section className={styles.checkoutContainer}>
@@ -83,11 +114,20 @@ export default function Checkout() {
           <p>Total:</p>
           <p className={styles.priceItem}>R$ {total.toFixed(2)}</p>
         </span>
-        <button className={styles.primaryBtn}>Finalizar Compra</button>
-        <NavLink to={"/products"} className={styles.secondaryBtn}>
-          Ver produtos
-        </NavLink>
+        <button
+          onClick={() => {
+            setShowPaymentForm(true);
+          }}
+          className={styles.primaryBtn}
+        >
+          Finalizar Compra
+        </button>
       </section>
+      <div
+        className={`${styles.PaymentForm} ${showPaymentForm ? styles.showMobile : ""}`}
+      >
+        <PaymentForm></PaymentForm>
+      </div>
     </main>
   );
 }

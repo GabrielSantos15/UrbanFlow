@@ -3,52 +3,51 @@
 @font-face {
   font-family: "displayFont";
   src: url("/src/assets/fonts/blowbrush/blowbrush.otf") format("truetype");
-    font-weight: normal;
+  font-weight: normal;
   font-style: normal;
 }
 
 :root {
-    /* Identidade */
-    --color-primary: #FD3889;
-    --color-secondary: #eeff00;
-    /* --color-secondary: #7c1bb4; */
-    --color-accent: #8b124b;
+  /* Identidade */
+  --color-primary: #FD3889;
 
-    /* Fundos */
-    --color-bg: #F5F5F5;
-    --color-surface: #FFFFFF;
-    --color-surface-secondary: #E8E8E8;
-    --color-overlay: rgba(0, 0, 0, 0.6);
+  /* Fundos */
+  --color-bg: #F5F5F5;
+  --color-bg-dark: #2B2C30;
+  --color-surface: #FFFFFF;
+  --color-surface-secondary: #E8E8E8;
+  --color-overlay: rgba(0, 0, 0, 0.6);
 
-    /* Texto */
-    --color-text: #000000;
-    --color-muted: #9ca3af;
+  /* Texto */
+  --color-text: #000000;
+  --color-muted: #9ca3af;
 
-    /* Estados */
-    --color-success: #22c55e;
-    --color-warning: #f59e0b;
-    --color-error: #ef4444;
+  /* Estados */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
 
-    /* Fonts */
-    --font-default: 'Montserrat',Impact,sans-serif;
-    --font-display: 'displayFont',Impact,sans-serif;
+  /* Fonts */
+  --font-default: 'Montserrat', Impact, sans-serif;
+  --font-display: 'displayFont', Impact, sans-serif;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-default);
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-default);
+  box-sizing: border-box;
 }
 
-body{
+body {
   background-color: var(--color-bg);
 }
 
-main{
+main {
   min-height: 100dvh;
+  margin-bottom: 2em;
 }
 
-button{
+button {
   all: unset;
 }

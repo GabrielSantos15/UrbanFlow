@@ -17,10 +17,15 @@
     font-size: clamp(2rem, 7vw, 3rem);
 }
 
+.emptyCart .primaryBtn {
+    max-width: 500px;
+
+}
+
 /* ==================================== Carrinho Vazio =================================== */
 .checkout {
-    position: relative;
     display: grid;
+    position: relative;
     grid-template-columns: 1fr;
     max-width: 1500px;
     margin: auto;
@@ -101,6 +106,11 @@
     font-weight: 600;
 }
 
+.priceContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
 
 .priceItem {
     font-weight: 600;
@@ -135,14 +145,13 @@
     cursor: pointer;
 }
 
-.primaryBtn,
-.secondaryBtn {
+.primaryBtn {
+    display: block;
     width: 100%;
-    max-width: 500px;
     text-align: center;
     margin-top: 1rem;
     padding: 0.5rem 0.1rem;
-        text-decoration: none;
+    text-decoration: none;
     cursor: pointer;
     transition: .5s;
 }
@@ -157,7 +166,6 @@
 }
 
 .secondaryBtn {
-    display: block;
     border: 1px solid var(--color-primary);
     color: var(--color-primary);
 }
@@ -167,7 +175,11 @@
     color: #fff;
 }
 
-.checkout .secondaryBtn {
+body:has(.PaymentForm.showMobile) {
+    overflow-y: hidden;
+}
+
+.PaymentForm:not(.showMobile) {
     display: none;
 }
 
@@ -196,17 +208,19 @@
     }
 
     .checkoutContainer {
-        position: sticky;
-        top: 5em;
+        display: none;
     }
 
-    .checkoutList,
-    .checkoutContainer {
+    .checkoutList {
         box-shadow: 5px 5px 5px #00000020;
         padding: 1rem;
     }
 
-    .checkout .secondaryBtn {
-        display: ruby-base;
+    .PaymentForm:not(.showMobile) {
+        display: block;
+    }
+
+    body:has(.PaymentForm.showMobile) {
+        overflow: auto;
     }
 }

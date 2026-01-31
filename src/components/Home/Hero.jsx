@@ -22,19 +22,19 @@ export default function Hero() {
         <span>
           <FaStar />
           <p>
-            Desines <br /> Unicos
+            Designs <br /> Únicos
           </p>
         </span>
         <span>
           <FaTag />
           <p>
-            Custo <br /> Beneficio
+            Custo <br /> Benefício
           </p>
         </span>
         <span>
           <FaClock />
           <p>
-            Entrega <br /> Rapida
+            Entrega <br /> Rápida
           </p>
         </span>
       </article>

@@ -1,0 +1,222 @@
+.paymentSection {
+    position: fixed;
+    inset: 0;
+    z-index: 800;
+    overflow-y: auto; 
+    -webkit-overflow-scrolling: touch;
+
+    background-color: var(--color-bg-dark);
+    color: #fff;
+    padding: 1rem;
+    padding-top: 5rem;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #0000003d;
+}
+
+.paymentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.creditCard {
+    padding: 0;
+    margin: 1em auto;
+    font-family: sans-serif;
+    width: min(400px, 100%);
+    min-height: 225px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    position: relative;
+}
+
+.frontCard,
+.backCard {
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    --colorCard1: color-mix(in srgb, var(--color-primary) 60%, #000000);
+    --colorCard2: color-mix(in srgb, var(--color-primary) 90%, #ffffff);
+
+
+    background: linear-gradient(135deg, var(--colorCard1), var(--colorCard2), var(--colorCard1));
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 10px;
+    transition: all .8s ease;
+}
+
+.frontCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 16px;
+    grid-template-areas:
+        "chip brandLogo brandLogo"
+        "cardNumber cardNumber cardNumber"
+        "cardName cardName expiry"
+    ;
+    align-items: end;
+}
+
+.brandLogo {
+    grid-area: brandLogo;
+    width: 40%;
+    align-self: center;
+    justify-self: end;
+}
+
+.chip {
+    grid-area: chip;
+    align-self: center;
+}
+
+.cardNumber {
+    grid-area: cardNumber;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+}
+
+.expiry {
+    grid-area: expiry;
+    justify-self: end;
+}
+
+.cardName {
+    grid-area: cardName;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.2rem;
+}
+
+.backCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: rotateY(-180deg);
+
+    backface-visibility: hidden;
+    color: #111;
+}
+
+.grayStrip {
+    width: 100%;
+    background: linear-gradient(90deg, #82828b, #cfcfcf, #82828b);
+    height: 40px;
+    margin-bottom: 16px;
+}
+
+.cardCvv {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 90%;
+    font-size: 1.2rem;
+    margin: 0 auto;
+}
+
+.cardCvv label {
+    text-align: right;
+    font-weight: bold;
+    color: #fff;
+}
+
+.cardCvv output {
+    background-color: #eee;
+    padding: 0.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: right;
+    color: #000;
+}
+
+.cardCvv p {
+    font-size: .5rem;
+    color: #ffffff85;
+}
+.creditCard.turn .frontCard {
+    transform: rotateY(180deg);
+    z-index: 0;
+}
+
+.creditCard.turn .backCard {
+    transform: rotateY(0);
+    z-index: 1;
+}
+
+.formField {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formField label {
+    color: #eeeeee81;
+}
+
+.formField input {
+    all: unset;
+    border-bottom: 1px solid #ffffff7c;
+    font-size: 1.1rem;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.securityInfo {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.checkoutBtn,.productsBtn {
+    background-color: var(--color-primary);
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0.5rem 1rem;
+}
+.productsBtn{
+    background-color: transparent;
+    text-decoration: none;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* ========== Gradientes por Bandeira =========== */
+
+.creditCard[data-brand="visa"] .frontCard,
+.creditCard[data-brand="visa"] .backCard {
+    background: linear-gradient(135deg, #0f1c68, #00a1b6, #0f1c68);
+}
+
+.creditCard[data-brand="mastercard"] .frontCard,
+.creditCard[data-brand="mastercard"] .backCard {
+    background: linear-gradient(135deg, #797979, #aeb3b8, #6b6b6b);
+}
+
+.creditCard[data-brand="amex"] .frontCard,
+.creditCard[data-brand="amex"] .backCard {
+    background: linear-gradient(135deg,
+            #0f4c5c 0%,
+            #1bb6b2 50%,
+            #0b3c49 100%);
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.creditCard[data-brand="elo"] .frontCard,
+.creditCard[data-brand="elo"] .backCard {
+    background: linear-gradient(135deg, #c53d14, #f89421, #c53d14);
+}
+
+
+@media screen and (min-width: 1300px) {
+    .paymentSection {
+        inset: auto;
+        position: sticky;
+        top: 5em;
+        padding: 2rem;
+    }
+}

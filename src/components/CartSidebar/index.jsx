@@ -78,7 +78,7 @@ export default function CartSidebar() {
                 <p>Subtotal:</p>
                 <p className={styles.priceItem}>R$ {total.toFixed(2)}</p>
               </span>
-              <NavLink to="/checkout">
+              <NavLink to="/checkout" onClick={closeCart}>
                 <button className={styles.checkoutBnt}>Revisar compra</button>
               </NavLink>
             </footer>

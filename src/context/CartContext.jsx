@@ -33,7 +33,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const clearCart = () => {
-    if(confirm("Você tem certeza que deseja limpar o seu carrinho?")) setCart([])
+    setCart([])
   }
 
   const increase = (id) => {
