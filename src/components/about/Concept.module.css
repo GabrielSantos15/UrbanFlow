@@ -1,0 +1,23 @@
+.conceptSection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+
+.conceptSection img{
+    max-width: 500px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.conceptSection article{
+    max-width: 600px;
+}
+.conceptSection article h2{
+   font-size: clamp(1.5rem, 15vw, 3rem);
+}
+.conceptSection article p{
+   font-size: 1.2rem;
+}
