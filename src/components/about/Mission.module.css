@@ -1,0 +1,28 @@
+.missionSection {
+    position: relative;
+    background-color: var(--color-surface-secondary);
+    background-image: linear-gradient(#d6d6d6,var(--color-surface));
+}
+
+.missionSection p {
+    margin: 1em;
+    max-width: 700px;
+}
+
+.missionSection svg {
+    display: block;
+    fill: var(--color-bg-dark);
+}
+
+@media screen and (min-width: 1024px) {
+    .missionSection p {
+        margin: 2em;
+        font-size: 1.5rem;
+    }
+
+    .missionSection article {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+}

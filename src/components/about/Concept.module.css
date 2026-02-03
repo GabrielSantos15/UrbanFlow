@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
     gap: 2em;
     padding: 2em;
 }
@@ -12,11 +12,13 @@
 }
 
 .conceptSection h2 {
-    font-size: clamp(2rem, 7vw, 5rem);
+    font-size: clamp(2.5rem, 7vw, 5rem);
     font-weight: 600;
     font-style: italic;
 }
-
+.conceptSection p {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+}
 
 .conceptSection figure {
     mask-image: url('assets/images/pattern.png');
@@ -35,12 +37,8 @@
     object-fit: cover;
 }
 
-/* .conceptSection img {
-    width: 100%;
-    aspect-ratio: 16/9;
-    border-radius: 50%;
-    object-fit: cover;
-    border-radius:72% 28% 82% 18% / 35% 64% 36% 65%  ;
-    box-shadow: 10px 10px 0 #727272;
-    
-} */
+@media screen and (min-width: 1024px) {
+    .conceptSection{
+        padding: 1em;
+    }
+}

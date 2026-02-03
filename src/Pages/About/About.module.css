@@ -1,0 +1,36 @@
+
+
+.aboutPage {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.objectiveContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+}
+
+.objectiveContainer img {
+    width: min(500px, 80%);
+}
+
+.objectiveContainer h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+}
+
+.objectiveContainer p {
+    max-width: 700px;
+    font-size: clamp(1rem, 3vw, 1.3rem);
+}
+
+.productsSection h2 {
+    margin: 0 1em;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 600;
+}

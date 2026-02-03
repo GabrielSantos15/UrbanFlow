@@ -1,0 +1,27 @@
+import GraffitiTitle from "../GraffitiTitle";
+import styles from "./Mission.module.css";
+import cityImage from "../../assets/images/city.png";
+import logo from "../../assets/images/logo.png";
+
+export default function Mission() {
+  return (
+    <section className={styles.missionSection}>
+      <article>
+        <GraffitiTitle>Urban Flow</GraffitiTitle>
+        <p>
+          Nossa missão é amplificar a arte urbana com produtos que conectam quem
+          vive a rua. Transformamos o cinza da cidade em cor, cultura e
+          identidade.{" "}
+          <strong>Não somos apenas uma marca, somos movimento</strong>
+        </p>
+      </article>
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill-opacity="1"
+          d="M0,256L0,160L46.5,160L46.5,224L92.9,224L92.9,256L139.4,256L139.4,160L185.8,160L185.8,256L232.3,256L232.3,128L278.7,128L278.7,64L325.2,64L325.2,288L371.6,288L371.6,128L418.1,128L418.1,256L464.5,256L464.5,288L511,288L511,256L557.4,256L557.4,256L603.9,256L603.9,96L650.3,96L650.3,224L696.8,224L696.8,256L743.2,256L743.2,64L789.7,64L789.7,160L836.1,160L836.1,128L882.6,128L882.6,32L929,32L929,224L975.5,224L975.5,32L1021.9,32L1021.9,128L1068.4,128L1068.4,224L1114.8,224L1114.8,160L1161.3,160L1161.3,224L1207.7,224L1207.7,32L1254.2,32L1254.2,288L1300.6,288L1300.6,128L1347.1,128L1347.1,32L1393.5,32L1393.5,192L1440,192L1440,320L1393.5,320L1393.5,320L1347.1,320L1347.1,320L1300.6,320L1300.6,320L1254.2,320L1254.2,320L1207.7,320L1207.7,320L1161.3,320L1161.3,320L1114.8,320L1114.8,320L1068.4,320L1068.4,320L1021.9,320L1021.9,320L975.5,320L975.5,320L929,320L929,320L882.6,320L882.6,320L836.1,320L836.1,320L789.7,320L789.7,320L743.2,320L743.2,320L696.8,320L696.8,320L650.3,320L650.3,320L603.9,320L603.9,320L557.4,320L557.4,320L511,320L511,320L464.5,320L464.5,320L418.1,320L418.1,320L371.6,320L371.6,320L325.2,320L325.2,320L278.7,320L278.7,320L232.3,320L232.3,320L185.8,320L185.8,320L139.4,320L139.4,320L92.9,320L92.9,320L46.5,320L46.5,320L0,320L0,320Z"
+        ></path>
+      </svg>
+    </section>
+  );
+}
