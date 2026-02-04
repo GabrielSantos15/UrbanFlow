@@ -5,7 +5,7 @@ import { useCartUI } from "../../context/CartUIContext";
 
 import styles from "./ProductDetail.module.css";
 import { FiHeart, FiRotateCcw, FiTruck, FiShoppingCart } from "react-icons/fi";
-import ProductCard from "../../components/productCard";
+import ProductCard from "../../components/ProductCard";
 import Carousel from "../../components/Carousel";
 
 export default function ProductDetail() {
