@@ -2,7 +2,7 @@ import Concept from "../../components/about/Concept";
 import Hero from "../../components/about/Hero";
 import Mission from "../../components/about/Mission";
 import Carousel from "../../components/Carousel";
-import ProductCard from "../../components/productCard";
+import ProductCard from "../../components/ProductCard";
 
 import products from "../../data/productsList";
 import muralImage from "../../assets/images/logo.png";
