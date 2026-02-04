@@ -32,7 +32,7 @@
   text-align: center;
   text-transform: uppercase;
   
-  background-image: url('assets/images/aboutHero.jpg');
+  background-image: url('/assets/images/aboutHero.jpg');
   background-position: bottom;
   background-size: cover;
   background-attachment: fixed;
