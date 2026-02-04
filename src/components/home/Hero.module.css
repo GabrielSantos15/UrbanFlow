@@ -152,7 +152,7 @@
 @media screen and (min-width: 1300px) {
     .heroSection {
         --sizeContainer: 75%;
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: 1fr 1.5fr 1fr;
         grid-template-rows: calc(100% - var(--sizeContainer)) var(--sizeContainer);
         grid-template-areas:
             "heroTitleLeft heroFigure heroTitleRight"

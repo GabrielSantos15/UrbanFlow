@@ -109,3 +109,26 @@
 .inputPrice input::before {
     content: "R$";
 }
+
+.starFilter {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.star {
+  font-size: 2rem;
+  color: #a1a1a1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.star:hover {
+  transform: scale(1.15);
+  color: #f5c518;
+}
+
+.active {
+  color: #f5c518;
+}

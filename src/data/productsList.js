@@ -18,7 +18,7 @@ const products = [
     price: 299.9,
     oldPrice: 399.9,
     image: getImage("moletom-1.png"),
-    rating: 4.8,
+    rating: 4.2,
     reviews: 47,
   },
   {
@@ -29,7 +29,7 @@ const products = [
     price: 289.9,
     oldPrice: 379.9,
     image: getImage("moletom-2.png"),
-    rating: 4.7,
+    rating: 3.9,
     reviews: 52,
   },
   {
@@ -39,7 +39,7 @@ const products = [
     category: ["spray"],
     price: 39.9,
     image: getImage("spray-red.png"),
-    rating: 4.6,
+    rating: 3.5,
     reviews: 34,
   },
   {
@@ -49,7 +49,7 @@ const products = [
     category: ["spray"],
     price: 39.9,
     image: getImage("spray-black.png"),
-    rating: 4.7,
+    rating: 4.0,
     reviews: 41,
   },
   {
@@ -60,7 +60,7 @@ const products = [
     price: 249.9,
     oldPrice: 319.9,
     image: getImage("skate-1.png"),
-    rating: 4.9,
+    rating: 5.0,
     reviews: 63,
   },
   {
@@ -71,7 +71,7 @@ const products = [
     price: 269.9,
     oldPrice: 349.9,
     image: getImage("skate-2.png"),
-    rating: 4.8,
+    rating: 4.3,
     reviews: 58,
   },
   {
@@ -81,7 +81,7 @@ const products = [
     category: ["acessorios"],
     price: 99.9,
     image: getImage("bone-1.png"),
-    rating: 4.5,
+    rating: 3.2,
     reviews: 29,
   },
   {
@@ -91,7 +91,7 @@ const products = [
     category: ["acessorios"],
     price: 29.9,
     image: getImage("chaveiro-1.png"),
-    rating: 4.4,
+    rating: 2.8,
     reviews: 21,
   },
   {
@@ -102,7 +102,7 @@ const products = [
     price: 89.9,
     oldPrice: 129.9,
     image: getImage("camiseta-1.png"),
-    rating: 4.7,
+    rating: 4.1,
     reviews: 38,
   },
   {
@@ -112,7 +112,7 @@ const products = [
     category: ["roupas"],
     price: 79.9,
     image: getImage("camiseta-2.png"),
-    rating: 4.6,
+    rating: 3.7,
     reviews: 31,
   },
   {
@@ -123,7 +123,7 @@ const products = [
     price: 179.9,
     oldPrice: 229.9,
     image: getImage("mochila-1.png"),
-    rating: 4.8,
+    rating: 4.4,
     reviews: 45,
   },
   {
@@ -133,7 +133,7 @@ const products = [
     category: ["spray"],
     price: 39.9,
     image: getImage("spray-pink.png"),
-    rating: 4.5,
+    rating: 3.4,
     reviews: 27,
   },
   {
@@ -143,7 +143,7 @@ const products = [
     category: ["spray"],
     price: 39.9,
     image: getImage("spray-white.png"),
-    rating: 4.6,
+    rating: 3.8,
     reviews: 22,
   },
   {
@@ -153,7 +153,7 @@ const products = [
     category: ["spray"],
     price: 39.9,
     image: getImage("spray-blue.png"),
-    rating: 4.7,
+    rating: 4.2,
     reviews: 33,
   },
   {
@@ -163,7 +163,7 @@ const products = [
     category: ["spray"],
     price: 44.9,
     image: getImage("spray-yellow.png"),
-    rating: 4.5,
+    rating: 2.6,
     reviews: 19,
   },
   {
@@ -174,7 +174,7 @@ const products = [
     price: 349.9,
     oldPrice: 449.9,
     image: getImage("tenis-1.png"),
-    rating: 4.9,
+    rating: 5.0,
     reviews: 67,
   },
   {
@@ -184,7 +184,7 @@ const products = [
     category: ["acessorios"],
     price: 59.9,
     image: getImage("pulseira-1.png"),
-    rating: 4.4,
+    rating: 3.1,
     reviews: 18,
   },
   {
@@ -194,7 +194,7 @@ const products = [
     category: ["roupas"],
     price: 249.9,
     image: getImage("jaqueta-1.png"),
-    rating: 4.8,
+    rating: 5.0,
     reviews: 54,
   },
   {
@@ -204,7 +204,7 @@ const products = [
     category: ["acessorios"],
     price: 34.9,
     image: getImage("adesivos-1.png"),
-    rating: 4.5,
+    rating: 2.9,
     reviews: 42,
   },
   {
@@ -214,7 +214,7 @@ const products = [
     category: ["acessorios"],
     price: 99.9,
     image: getImage("bone-2.png"),
-    rating: 4.7,
+    rating: 3.6,
     reviews: 36,
   },
 ];

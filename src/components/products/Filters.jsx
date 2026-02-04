@@ -102,15 +102,24 @@ export default function Filters({ filters, onChange, clearFilters, set }) {
             </span>
           </div>
         </fieldset>
-        <input
-          type="range"
-          min={0}
-          max={5}
-          step={0.1}
-          value={filters.minRating}
-          onChange={setNumber("minRating")}
-        />
-        <output>{filters.minRating}</output>
+
+        <fieldset className={styles.starFilter}>
+          <legend>Avaliação mínima</legend>
+          {[1, 2, 3, 4, 5].map((star) => (
+            <button
+              key={star}
+              type="button"
+              className={`${styles.star} ${
+                filters.minRating >= star ? styles.active : ""
+              }`}
+              value={star}
+              onClick={setNumber("minRating")}
+              aria-label={`Mínimo ${star} estrelas`}
+            >
+              ★
+            </button>
+          ))}
+        </fieldset>
 
         <button
           className={styles.clearBtn}
