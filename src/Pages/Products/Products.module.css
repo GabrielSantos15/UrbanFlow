@@ -3,12 +3,13 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    padding: 1rem 2rem;
+    padding: 1rem;
 }
 
-.searchHeader h3{
-    font-weight: 600;
-    font-size: clamp(1.2rem, 4vw, 2.5rem);
+.searchHeader h3 {
+        font-weight: 600;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 0.5rem;
 }
 
 .ProductsSection {
@@ -25,10 +26,12 @@
     border-radius: 1.5em;
     padding: 5px;
 }
-.searchContainer svg{
+
+.searchContainer svg {
     font-size: 1.5rem;
     color: var(--color-muted);
 }
+
 .searchContainer input {
     all: unset;
     padding: .3rem .5rem;
@@ -45,8 +48,53 @@
     cursor: pointer;
 }
 
+
+.filtersMobile summary::-webkit-details-marker {
+    display: none
+}
+
+.filtersToggle,
+.filtersDesktop h3 {
+    list-style: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: .5em;
+}
+
+.filtersToggle::-webkit-details-marker {
+    display: none;
+}
+
+.arrow {
+    font-size: 1rem;
+    margin-left: .5rem;
+    transition: transform 0.3s ease;
+}
+
+details[open] .arrow {
+    transform: rotate(-180deg);
+}
+
+.filtersDesktop {
+    display: none;
+}
+
 @media screen and (min-width: 1024px) {
     .ProductsSection {
         grid-template-columns: 350px 1fr;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .filtersDesktop {
+        display: block;
+        position: sticky;
+        top: 5em;
+        align-self: start;
+    }
+
+    .filtersMobile {
+        display: none;
     }
 }

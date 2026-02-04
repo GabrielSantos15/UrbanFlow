@@ -5,18 +5,19 @@
   gap: 0.5rem;
 }
 
+
 .track {
   display: flex;
   justify-content: start;
   gap: 1em;
   padding: 2em;
-
+  
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   
-  scroll-padding-left: 2em;
-
+  scroll-padding-left: 1em;
+  
   scrollbar-width: none;
 }
 

@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { useCartUI } from "../../context/CartUIContext";
+import logo from "../../assets/images/logo.png";
 import styles from "./CartSidebar.module.css";
 
 export default function CartSidebar() {
@@ -25,7 +26,10 @@ export default function CartSidebar() {
           </button>
         </header>
         {cart.length === 0 ? (
-          <p>Carrinho vazio</p>
+          <div className={styles.emptyCart}>
+            <img src={logo} alt="Logo da UrbanFlow" />
+            <p>Carrinho vazio</p>
+          </div>
         ) : (
           <>
             <div className={styles.listCart}>
@@ -78,8 +82,12 @@ export default function CartSidebar() {
                 <p>Subtotal:</p>
                 <p className={styles.priceItem}>R$ {total.toFixed(2)}</p>
               </span>
-              <NavLink to="/checkout" onClick={closeCart}>
-                <button className={styles.checkoutBnt}>Revisar compra</button>
+              <NavLink
+                to="/checkout"
+                onClick={closeCart}
+                className={styles.checkoutBnt}
+              >
+                Revisar compra
               </NavLink>
             </footer>
           </>

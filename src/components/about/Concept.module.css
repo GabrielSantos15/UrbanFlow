@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     gap: 2em;
-    padding: 2em;
+    padding: 1em;
 }
 
 .conceptSection article{ 
@@ -39,6 +39,6 @@
 
 @media screen and (min-width: 1024px) {
     .conceptSection{
-        padding: 1em;
+        padding: 2em;
     }
 }

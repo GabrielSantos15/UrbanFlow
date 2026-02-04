@@ -31,8 +31,6 @@
 .heroSection h1 {
     font-size: clamp(4rem, 12vw, 12rem);
     font-family: var(--font-display);
-    /* -webkit-text-stroke-width: 1px; 
-  -webkit-text-stroke-color: var(--color-primary);  */
 
     text-align: center;
 }
@@ -73,7 +71,7 @@
 }
 
 .heroContent h2 {
-    font-size: clamp(1.5rem, 3vw, 3rem);
+    font-size: clamp(1.3rem, 3vw, 3rem);
 }
 
 .heroContent p {
@@ -106,7 +104,22 @@
     text-align: center;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
+    .heroSection {
+                --sizeContainer: 60%;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            "heroTitles heroFigure"
+            "heroContent heroFigure "
+            "heroStats heroFigure ";
+
+    }
+
+    .heroTitles {
+        grid-area: heroTitles;
+    }
+    
     .heroFigure {
         grid-area: heroFigure;
     }
@@ -131,18 +144,15 @@
         gap: 1em;
     }
 
-    .heroTitles {
-        display: contents;
+    .heroStats span, .heroContent {
+        color: #fff;
     }
-
-
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
     .heroSection {
         --sizeContainer: 75%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 2fr 1fr;
         grid-template-rows: calc(100% - var(--sizeContainer)) var(--sizeContainer);
         grid-template-areas:
             "heroTitleLeft heroFigure heroTitleRight"
@@ -153,6 +163,10 @@
         gap: 0;
     }
 
+    .heroTitles {
+        display: contents;
+    }
+
     .heroTitleLeft {
         justify-self: end;
         transform: translate(25%)
@@ -161,13 +175,5 @@
     .heroTitleRight {
         justify-self: start;
         transform: translate(-25%)
-    }
-
-    .heroContent {
-        color: #fff;
-    }
-
-    .heroStats span {
-        color: #fff;
     }
 }

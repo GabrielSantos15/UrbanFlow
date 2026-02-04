@@ -1,10 +1,9 @@
 .testimonialsSection {
-    margin-top: 5em;
     background-color: var(--color-surface-secondary);
 }
 
 .sectionHeader{
-    padding: 2em;
+    padding: 1em;
 }
 
 .sectionHeader h2 {
@@ -17,5 +16,11 @@
 
 .sectionHeader p {
     text-align: center;
-    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-size: clamp(1.3rem, 2vw, 1.5rem);
+}
+
+@media screen and (min-width: 1024px) {
+    .sectionHeader{
+        padding: 2em;
+    }
 }

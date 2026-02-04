@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { FaCartShopping } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
@@ -6,44 +6,58 @@ import { useCartUI } from "../../context/CartUIContext";
 import Logo from "../../assets/images/simpleLogo.png";
 import styles from "./Header.module.css";
 
-function CartButton() {
+const SCROLL_THRESHOLD = 50;
+
+function CartButton({ onClose }) {
   const { cart } = useCart();
   const { toggleCart } = useCartUI();
+
+  const handleClick = () => {
+    toggleCart();
+    onClose?.();
+  };
 
   const count = cart?.reduce((sum, item) => sum + item.quantity, 0) ?? 0;
 
   return (
-         <div className={styles.btnCart} onClick={toggleCart}>
-            <FaCartShopping className={styles.iconButton}></FaCartShopping>
-           <p>{count} Produtos</p>
-         </div>
+    <button
+      className={styles.btnCart}
+      onClick={handleClick}
+      aria-label={`Carrinho (${count} produtos)`}
+      type="button"
+    >
+      <FaCartShopping className={styles.iconButton} aria-hidden="true" />
+      <p>{count} Produtos</p>
+    </button>
   );
 }
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const [visible, setVisible] = useState(true);
   const [lastScroll, setLastScroll] = useState(0);
 
-  useEffect(() => {
-    const onScroll = () => {
-      const current = window.scrollY;
-      if (current < 50) {
-        setVisible(true);
-      } else if (current < lastScroll) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-      setLastScroll(current);
-    };
+  const handleScroll = useCallback(() => {
+    const current = window.scrollY;
 
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    if (current < SCROLL_THRESHOLD) {
+      setVisible(true);
+    } else if (current < lastScroll) {
+      setVisible(true);
+    } else {
+      setVisible(false);
+    }
+
+    setLastScroll(current);
   }, [lastScroll]);
 
-  const closeMenu = () => setMenuOpen(false);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
+  const toggleMenu = useCallback(() => setMenuOpen((prev) => !prev), []);
 
   return (
     <header
@@ -51,29 +65,54 @@ export default function Header() {
         menuOpen ? styles.open : ""
       }`}
     >
-      <div className={styles.overlay} onClick={closeMenu}>
-        <div className={styles.menu} onClick={(e) => e.stopPropagation()}>
-          <nav className={styles.nav}>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/about">Sobre</NavLink>
-            <NavLink to="/products">Produtos</NavLink>
-          </nav>
-        </div>
+      <nav className={styles.nav}>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/about">Sobre</NavLink>
+        <NavLink to="/products">Produtos</NavLink>
+      </nav>
+
+      <NavLink to="/" className={styles.logo}>
+        <img src={Logo} width={50} alt="Logo UrbanFlow" />
+      </NavLink>
+
+      <div className={styles.cartDesktop}>
+        <CartButton />
       </div>
 
-      <figure className={styles.logo}>
-        <img src={Logo} width={50} alt="Logo UrbanFlow" />
-      </figure>
-      <CartButton></CartButton>
       <div className={styles.headerActions}>
         <button
           className={styles.menuToggle}
-          onClick={() => setMenuOpen((prev) => !prev)}
-          aria-label="Menu"
+          onClick={toggleMenu}
+          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={menuOpen}
+          type="button"
         >
           {menuOpen ? "✕" : "☰"}
         </button>
       </div>
+
+      {menuOpen && (
+        <div
+          className={styles.overlay}
+          onClick={closeMenu}
+          role="presentation"
+        />
+      )}
+
+      <aside className={`${styles.menu} ${menuOpen ? styles.open : ""}`}>
+        <nav className={styles.navMobile}>
+          <NavLink to="/" onClick={closeMenu}>
+            Home
+          </NavLink>
+          <NavLink to="/about" onClick={closeMenu}>
+            Sobre
+          </NavLink>
+          <NavLink to="/products" onClick={closeMenu}>
+            Produtos
+          </NavLink>
+          <CartButton onClose={closeMenu} />
+        </nav>
+      </aside>
     </header>
   );
 }

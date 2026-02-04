@@ -1,5 +1,4 @@
 .filtersContainer {
-    position: relative;
     padding: 1em;
 }
 
@@ -8,11 +7,9 @@
 }
 
 .filtersContainer form {
-    position: sticky;
     display: flex;
-    gap: 1rem;
     flex-direction: column;
-    top: 1em;
+    gap: 1rem;
 }
 
 .filtersContainer fieldset {
@@ -30,10 +27,10 @@
     align-items: center;
     gap: .5rem;
     width: fit-content;
-    margin: auto;
     border: 2px solid var(--color-surface-secondary);
     padding: 0.5rem;
     border-radius: 5px;
+    margin-left: auto;
 }
 
 .clearBtn svg{

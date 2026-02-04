@@ -5,6 +5,7 @@ import ProductsGrid from "../../components/products/ProductsGrid";
 import products from "../../data/productsList";
 import styles from "./Products.module.css";
 import { FaSearch } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa6";
 
 export default function Products() {
   const [filters, setFilters] = useState({
@@ -40,7 +41,7 @@ export default function Products() {
 
   const sortedList = useMemo(() => {
     const list = [...filtered];
-    
+
     switch (filters.order) {
       case "price-asc":
         return list.sort((a, b) => a.price - b.price);
@@ -77,7 +78,7 @@ export default function Products() {
       <div className={styles.searchHeader}>
         <h3>Tudo em um lugar</h3>
         <span className={styles.searchContainer}>
-          <FaSearch/>
+          <FaSearch />
           <input
             placeholder="Encontre o que procura"
             value={filters.search}
@@ -88,12 +89,27 @@ export default function Products() {
       </div>
       <hr />
       <section className={styles.ProductsSection}>
-        <Filters
-          filters={filters}
-          onChange={setFilters}
-          clearFilters={clearFilters}
-          set={set}
-        />
+        <details className={styles.filtersMobile}>
+          <summary className={styles.filtersToggle}>
+            Filtros
+            <FaChevronDown className={styles.arrow} />
+          </summary>
+          <Filters
+            filters={filters}
+            onChange={setFilters}
+            clearFilters={clearFilters}
+            set={set}
+          />
+        </details>
+        <aside className={styles.filtersDesktop}>
+          <h3>Filtros</h3>
+          <Filters
+            filters={filters}
+            onChange={setFilters}
+            clearFilters={clearFilters}
+            set={set}
+          />
+        </aside>
         <ProductsGrid list={sortedList} />
       </section>
     </main>
