@@ -21,8 +21,8 @@
 }
 
 .conceptSection figure {
-    mask-image: url('assets/images/pattern.png');
-    -webkit-mask-image: rl('assets/images/pattern.png');
+    mask-image: url('/assets/images/pattern.png');
+    -webkit-mask-image: rl('/assets/images/pattern.png');
     mask-repeat: no-repeat;
     mask-position: center center;
     mask-size: contain;

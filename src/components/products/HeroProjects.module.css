@@ -1,5 +1,5 @@
 .heroProjects {
-  background-image: url('assets/images/predios.jpg');
+  background-image: url('/assets/images/predios.jpg');
   background-position: center center;
   background-size: cover;
   object-fit: cover;

@@ -10,7 +10,7 @@
   position: absolute;
   inset: 0;
 
-  background-image: url('assets/images/aboutHero.jpg');
+  background-image: url('/assets/images/aboutHero.jpg');
   background-position: bottom;
   background-size: cover;
 
