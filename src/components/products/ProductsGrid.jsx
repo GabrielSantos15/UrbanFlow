@@ -1,4 +1,4 @@
-import ProductCard from "../productCard";
+import ProductCard from "../ProductCard";
 import styles from "./ProductsGrid.module.css"
 
 export default function ProductsGrid({ list }) {
