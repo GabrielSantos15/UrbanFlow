@@ -19,18 +19,15 @@ export default function ProductDetail() {
 
   const getRecommendedProducts = () => {
     const qtdRecommendedProducts = 7
-    // Filtra produtos da mesma categoria excluindo o produto atual
     const sameCategory = products.filter(
       (p) => p.id !== product.id && 
       p.category.some(cat => product.category.includes(cat))
     );
 
-    // Se tiver produtos da mesma categoria, retorna até 5
     if (sameCategory.length >= qtdRecommendedProducts) {
       return sameCategory.slice(0, qtdRecommendedProducts);
     }
 
-    // Se não tiver 5 da mesma categoria, preenche com outros produtos
     const otherProducts = products.filter(
       (p) => p.id !== product.id && 
       !sameCategory.includes(p)
@@ -51,7 +48,7 @@ export default function ProductDetail() {
         <article className={styles.infoSection}>
           <span className={styles.category}>{product.category}</span>
           <h1 className={styles.name}>{product.name}</h1>
-          <p className={styles.price}>${product.price}</p>
+          <p className={styles.price}>R$ {product.price.toFixed(2)}</p>
           <p>{product.description}</p>
 
           <button
