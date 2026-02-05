@@ -2,7 +2,7 @@
     position: fixed;
     inset: 0;
     z-index: 800;
-    overflow-y: auto; 
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
     background-color: var(--color-bg-dark);
@@ -37,7 +37,7 @@
 
     width: 100%;
     height: 100%;
-    --colorCard1: color-mix(in srgb, var(--color-primary) 60%, #000000);
+    --colorCard1: color-mix(in srgb, var(--color-primary) 60%, #610000);
     --colorCard2: color-mix(in srgb, var(--color-primary) 90%, #ffffff);
 
 
@@ -135,6 +135,7 @@
     font-size: .5rem;
     color: #ffffff85;
 }
+
 .creditCard.turn .frontCard {
     transform: rotateY(180deg);
     z-index: 0;
@@ -172,17 +173,30 @@
     opacity: 0.7;
 }
 
-.checkoutBtn,.productsBtn {
+.checkoutBtn,
+.productsBtn {
     background-color: var(--color-primary);
     font-size: 1.2rem;
     text-align: center;
     padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: .5s;
 }
-.productsBtn{
+
+.checkoutBtn:hover, .productsBtn:hover {
+    filter: brightness(.8);
+}
+
+.productsBtn {
     background-color: transparent;
     text-decoration: none;
     border: 1px solid var(--color-primary);
     color: var(--color-primary);
+}
+
+.productsBtn:hover {
+    background-color: var(--color-primary);
+    color: #fff;
 }
 
 /* ========== Gradientes por Bandeira =========== */
@@ -208,7 +222,7 @@
 
 .creditCard[data-brand="elo"] .frontCard,
 .creditCard[data-brand="elo"] .backCard {
-    background: linear-gradient(135deg, #c53d14, #f89421, #c53d14);
+    background: linear-gradient(135deg, #c54c14, #ffa023, #c53814);
 }
 
 

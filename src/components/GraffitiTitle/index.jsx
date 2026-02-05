@@ -42,7 +42,7 @@ export default function GraffitiTitle({children}) {
       });
 
       tl.to(text, {
-        filter: "drop-shadow(5px 5px 0px #06a4b9",
+        filter: "drop-shadow(5px 5px 0px #16c1eb",
         duration: 0.3,
       });
     }, 0);

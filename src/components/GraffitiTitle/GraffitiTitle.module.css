@@ -9,6 +9,7 @@
 .graffitiSvg {
   width: 100%;
   max-width: 1000px;
+  filter: saturate(2);
 }
 
 .graffitiText {
