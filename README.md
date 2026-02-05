@@ -1,16 +1,51 @@
-# React + Vite
+# 🎨 UrbanFlow - E-commerce de Arte Urbana
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O **UrbanFlow** é uma plataforma de e-commerce desenvolvida para conectar a cultura de rua (streetwear, shapes, acessórios) a uma experiência digital moderna. O foco principal deste projeto foi unir uma estética visual forte com as melhores práticas de desenvolvimento Front-end.
 
-Currently, two official plugins are available:
+---
+## 🔗 Links
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Live Demo:** [Ver Projeto/](https://urban-flow-kappa.vercel.app/)
+* **Meu LinkedIn:** [Ver Post](https://www.linkedin.com/posts/gabrielsantos1509_reactjs-frontend-webdevelopment-activity-7425162362497785872-y8Vf?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkTkOkBSaoGpEzpEivH-Rj7Tibcm-sPEIg)
+---
 
-## React Compiler
+## 🚀 Tecnologias Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Este projeto foi construído utilizando o ecossistema moderno do JavaScript:
 
-## Expanding the ESLint configuration
+* **ReactJS** (Hooks, Componentização)
+* **GSAP** (Animações de alto desempenho)
+* **CSS Modules** (Estilização isolada e escalável)
+* **React Router Dom** (Navegação SPA)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🌟 Diferenciais do Projeto
+
+* **UI/UX Moderna:** Interface inspirada em bento grids e estética urbana, focada em converter visitantes em clientes.
+* **Animações Fluídas:** Uso do GSAP para criar uma experiência de navegação menos estática e mais imersiva.
+* **Responsividade:** Design totalmente adaptável para dispositivos móveis e desktop.
+
+---
+
+## 🛠️ Como rodar o projeto
+
+```bash
+# Clone o repositório
+git clone https://github.com/GabrielSantos15/UrbanFlow.git
+
+# Entre no diretório
+cd urban-flow
+
+# Instale as dependências
+npm install
+
+# Execute a aplicação
+npm start
+```
+
+---
+## 🤝 **Contribuições**
+
+Ideias, melhorias e feedbacks são sempre bem-vindos!
+Sinta-se à vontade para abrir uma issue, enviar um pull request
